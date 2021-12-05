@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.84.0">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/album/">
+
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}"/>
+    <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
+
+    <title>{% trans %}Last releases{% endtrans %}</title>
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+
+
+</head>
+<body>
+
+<main>
+    <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <h1 class="fw-light">{% trans %}New releases{% endtrans %}</h1>
+            </div>
+        </div>
+    </section>
+
+    <div class="album py-5 bg-light">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+                {% for item in items %}
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <img src="{{ item.images.1.url }}" alt=""/>
+                            <div class="card-body">
+                                <p class="card-text">{{ item.name }}</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        {% for artist in item.artists %}
+                                            <button type="button"
+                                                    class="btn btn-sm btn-outline-secondary">{{ artist.name }}</button>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+</main>
+
+<footer class="text-muted py-5">
+
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+            <li class="page-item {{ urlToPreviousReleases == '' ? 'disabled' : '' }}">
+                <a class="page-link" href="{{ urlToPreviousReleases }}" tabindex="-1">{% trans %}Previous{% endtrans %}</a>
+            </li>
+            <li class="page-item {{ urlToNextReleases == '' ? 'disabled' : '' }}">
+                <a class="page-link" href="{{ urlToNextReleases }}">{% trans %}Next{% endtrans %}</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <p class="float-end mb-1">
+            <a href="#">{% trans %}Back to top{% endtrans %}</a>
+        </p>
+    </div>
+</footer>
+
+</body>
+</html>
