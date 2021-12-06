@@ -1,77 +1,51 @@
-Spotify Api Bits America
-========================
+# Spotify Api Bits Americas
 
-**WARNING**: This distribution does not support Symfony 4. See the
-[Installing & Setting up the Symfony Framework][15] page to find a replacement
-that fits you best.
+Catálogo de ultimos lanzamientos de albumes de spotify, con información a cada artista relacionado. 
 
-Welcome to the Symfony Standard Edition - a fully-functional Symfony
-application that you can use as the skeleton for your new applications.
+##Clonar
+```
+1. Tener git instalado
+2. Ubicarse en un directorio en el cual pondremos el contenido de este repositorio.
+3. Abrir en este directorio, la consola de git o la preferente por usted y agregar el siguiente comando:
 
-For details on how to download and get started with Symfony, see the
-[Installation][1] chapter of the Symfony Documentation.
+* Por SSH
+git clone git@github.com:BrayanMoya/SpotifyApiBitsAmerica.git
 
-What's inside?
---------------
+* Con HTTPS
+git clone https://github.com/BrayanMoya/SpotifyApiBitsAmerica.git
 
-The Symfony Standard Edition is configured with the following defaults:
+4. Luego de clonado el repositorio, ubicarse desde la consola dentro de la carpeta que se creo automaticamente como 'SpotifyApiBitsAmerica'
+```
 
-  * An AppBundle you can use to start coding;
+## Instalacion 
+- Ubicado siempre desde consola dentro de la carpeta del repositorio clonado
+### Instalación de dependencias de composer
+```sh
+composer install
+```
 
-  * Twig as the only configured template engine;
+### Configuración para servidor
+Ya sea si se inicia el servidor local que provee php (php -S localhost:8000), o un servidor aparte como IIS o nginx, la ruta para el controlador frontal esta dentro de la carpeta web/ y el archivo es app.php.
 
-  * Doctrine ORM/DBAL;
+ruta final para visualizar en navegador:
 
-  * Swiftmailer;
+localhost/app.php/es, el parametro 'es' es para internacionalización
 
-  * Annotations enabled for everything.
 
-It comes pre-configured with the following bundles:
+## Vista previa
+![alt text](https://github.com/BrayanMoya/SpotifyApiBitsAmerica/tree/master/InicioSpotifyApi.png)
 
-  * **FrameworkBundle** - The core Symfony framework bundle
+![alt text](https://github.com/BrayanMoya/SpotifyApiBitsAmerica/tree/master/Lanzamientos.png)
 
-  * [**SensioFrameworkExtraBundle**][6] - Adds several enhancements, including
-    template and routing annotation capability
+## Configuracion general
+- Iniciar sesión o crear cuenta en https://developer.spotify.com/dashboard/login
+- Luego de estar dentro, crear una aplicación dandole en el botón 'Create an app'
+- Luego de creada la apliación, ingresar a esta y copiar el client id y el client secret
+- Configurar en el app/config/parameters.yml:
+    - clientId suministrado por la aplicación creada en spotify
+    - clientSecret suministrado por la aplicación creada en spotify
 
-  * [**DoctrineBundle**][7] - Adds support for the Doctrine ORM
+En caso de no tener apliación en spotify y no querer realizar la creación de esta, ya viene por defecto con unos valores de una aplicación ya creada.
 
-  * [**TwigBundle**][8] - Adds support for the Twig templating engine
-
-  * [**SecurityBundle**][9] - Adds security by integrating Symfony's security
-    component
-
-  * [**SwiftmailerBundle**][10] - Adds support for Swiftmailer, a library for
-    sending emails
-
-  * [**MonologBundle**][11] - Adds support for Monolog, a logging library
-
-  * **WebProfilerBundle** (in dev/test env) - Adds profiling functionality and
-    the web debug toolbar
-
-  * **SensioDistributionBundle** (in dev/test env) - Adds functionality for
-    configuring and working with Symfony distributions
-
-  * [**SensioGeneratorBundle**][13] (in dev env) - Adds code generation
-    capabilities
-
-  * [**WebServerBundle**][14] (in dev env) - Adds commands for running applications
-    using the PHP built-in web server
-
-  * **DebugBundle** (in dev/test env) - Adds Debug and VarDumper component
-    integration
-
-All libraries and bundles included in the Symfony Standard Edition are
-released under the MIT or BSD license.
-
-Enjoy!
-
-[1]:  https://symfony.com/doc/3.4/setup.html
-[6]:  https://symfony.com/doc/current/bundles/SensioFrameworkExtraBundle/index.html
-[7]:  https://symfony.com/doc/3.4/doctrine.html
-[8]:  https://symfony.com/doc/3.4/templating.html
-[9]:  https://symfony.com/doc/3.4/security.html
-[10]: https://symfony.com/doc/3.4/email.html
-[11]: https://symfony.com/doc/3.4/logging.html
-[13]: https://symfony.com/doc/current/bundles/SensioGeneratorBundle/index.html
-[14]: https://symfony.com/doc/current/setup/built_in_web_server.html
-[15]: https://symfony.com/doc/current/setup.html
+## Referencias
+- https://developer.spotify.com/documentation/web-api
