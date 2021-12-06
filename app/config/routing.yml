@@ -13,3 +13,9 @@ last_releases:
     defaults: { _controller: AppBundle:Spotify:releases }
     requirements:
         _locale:  en|es
+artist:
+    path:     /artist/{_locale}
+    defaults: { _controller: AppBundle:Spotify:artist }
+    requirements:
+        _locale:  en|es
+

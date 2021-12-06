@@ -58,16 +58,6 @@ class Session
     }
 
     /**
-     * Get the access token expiration time.
-     *
-     * @return int A Unix timestamp indicating the token expiration time.
-     */
-    public function getTokenExpiration()
-    {
-        return $this->expirationTime;
-    }
-
-    /**
      * Get the scope for the current access token
      *
      * @return array The scope for the current access token

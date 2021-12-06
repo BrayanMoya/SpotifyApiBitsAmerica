@@ -12,27 +12,8 @@
     <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
 
     <title>{% trans %}Last releases{% endtrans %}</title>
-
-    <style>
-        .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            user-select: none;
-        }
-
-        @media (min-width: 768px) {
-            .bd-placeholder-img-lg {
-                font-size: 3.5rem;
-            }
-        }
-    </style>
-
-
 </head>
 <body>
-
 <main>
     <section class="py-5 text-center container">
         <div class="row py-lg-5">
@@ -55,8 +36,10 @@
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
                                         {% for artist in item.artists %}
-                                            <button type="button"
-                                                    class="btn btn-sm btn-outline-secondary">{{ artist.name }}</button>
+                                            <a href="{{ url('artist', {'id': artist.id}) }}" type="button"
+                                               class="btn btn-sm btn-outline-secondary">
+                                                {{ artist.name }}
+                                            </a>
                                         {% endfor %}
                                     </div>
                                 </div>
@@ -74,9 +57,13 @@
 <footer class="text-muted py-5">
 
     <nav aria-label="Page navigation example">
+        <div class="pagination-info" style="padding-left: 300px">
+            {{ offset }}-{{ offset+limit }} de {{ total }}
+        </div>
         <ul class="pagination justify-content-center">
             <li class="page-item {{ urlToPreviousReleases == '' ? 'disabled' : '' }}">
-                <a class="page-link" href="{{ urlToPreviousReleases }}" tabindex="-1">{% trans %}Previous{% endtrans %}</a>
+                <a class="page-link" href="{{ urlToPreviousReleases }}"
+                   tabindex="-1">{% trans %}Previous{% endtrans %}</a>
             </li>
             <li class="page-item {{ urlToNextReleases == '' ? 'disabled' : '' }}">
                 <a class="page-link" href="{{ urlToNextReleases }}">{% trans %}Next{% endtrans %}</a>

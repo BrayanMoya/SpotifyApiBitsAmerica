@@ -3,13 +3,11 @@
 namespace AppBundle\Controller;
 
 use Exception;
-use Spotify\Client\ApiResources;
-use Spotify\Client\Session;
-use Spotify\ParsedResponse;
+use Spotify;
+use Spotify\Client\ApiException;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Annotation\Route;
 
 class SpotifyController extends Controller
 {
@@ -21,29 +19,14 @@ class SpotifyController extends Controller
     {
         $releasesParameters = $request->query->get('releasesParameters', '');
         $spotifyParameters = $this->getParameter('spotify');
-        $clientId = $spotifyParameters['clientId'];
-        $clientSecret = $spotifyParameters['clientSecret'];
 
-        $session = new Session($clientId, $clientSecret);
-
-        $session->requestCredentialsToken();
-        $accessToken = $session->getAccessToken();
-
-        if (!isset($accessToken)) {
-            print_r('Invalid access token');
-            exit;
+        try {
+            $releases = Spotify\Response::getReleasesResponse($releasesParameters, $spotifyParameters);
+        } catch (ApiException $e) {
+            return $e->getReason();
         }
 
-        $api = new ApiResources();
-        $api->setAccessToken($accessToken);
-
-
-        $releases = json_decode(json_encode($api->getNewReleases([], $releasesParameters)), true);
-        $parsedResponse = new ParsedResponse($releases);
-        $parsedResponse->unsetMarkets();
-
-        $newReleases = $parsedResponse->getResponse();
-        $albums = $newReleases['albums'];
+        $albums = $releases['albums'];
         $items = $albums['items'];
         $limit = $albums['limit'];
         $offset = $albums['offset'];
@@ -72,4 +55,34 @@ class SpotifyController extends Controller
             'total' => $total,
         ]);
     }
+
+    public function artistAction(Request $request)
+    {
+        $spotifyParameters = $this->getParameter('spotify');
+        $artistId = $request->query->get('id', '');
+
+        try {
+            $artist = Spotify\Response::getArtistResponse($spotifyParameters, $artistId);
+            $artistTracks = Spotify\Response::getArtistTracksResponse($spotifyParameters, $artistId);
+        } catch (ApiException $e) {
+            return $e->getReason();
+        }
+
+        $artistImage = $artist['images'][1]['url'];
+        $artistSpotifyPage = $artist['external_urls']['spotify'];
+        $artistName = $artist['name'];
+        $tracks = $artistTracks['tracks'];
+        $urlToReleases = $this->generateUrl('last_releases', [
+            '_locale' => $request->getLocale()
+        ]);
+
+        return $this->render('spotify/artist.html.twig', [
+            'artistImage' => $artistImage,
+            'artistSpotifyPage' => $artistSpotifyPage,
+            'artistName' => $artistName,
+            'tracks' => $tracks,
+            'urlToReleases' => $urlToReleases
+        ]);
+    }
+
 }

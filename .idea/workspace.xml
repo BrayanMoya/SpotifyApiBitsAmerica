@@ -4,7 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fe2db63c-2869-4806-9cb7-1ecbd380a3ec" name="Changes" comment="" />
+    <list default="true" id="fe2db63c-2869-4806-9cb7-1ecbd380a3ec" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/git_toolbox_prj.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Resources/views/spotify/artist.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Spotify/Response.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/Translations/messages.es.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/Translations/messages.es.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/spotify/releases.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/spotify/releases.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/routing.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/routing.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/SpotifyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/SpotifyController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Spotify/Client/ApiException.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Spotify/Client/ApiException.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Spotify/Client/ApiResources.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Spotify/Client/ApiResources.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Spotify/Client/Request.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Spotify/Client/Request.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Spotify/Client/Session.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Spotify/Client/Session.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Spotify/ParsedResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Spotify/ParsedResponse.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,6 +37,9 @@
         <option value="HTML File" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -98,8 +116,9 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Laravel 6" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Resources/views/spotify" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -108,6 +127,9 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Proyectos\spotifyApi\app\Resources\views\spotify" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Proyectos\spotifyApi\src\assets\dist" />
     </key>
@@ -135,33 +157,46 @@
       <updated>1638502978010</updated>
       <workItem from="1638502979284" duration="6069000" />
       <workItem from="1638639648910" duration="20999000" />
+      <workItem from="1638746790071" duration="14059000" />
     </task>
+    <task id="LOCAL-00001" summary="Feat: :bulb: Test de Admisión bits america&#10;&#10;* Initial commit.&#10;* Se agregan clases para lograr conexión con la api de spotify y generar el acces token para consumir cada uno de los endpoints necesarios.&#10;* Se agrega ruta `releases` que se redirecciona desde la página de inicio, para asi poder visualizar un catálogo de los ultimos lanzamientos.&#10;* Se agrega paginador para los catálogos de los lanzamientos, cada página tiene un limite de 20 registros.&#10;* Falta interfaz para visualizar información del artista y sus canciones.">
+      <created>1638747210089</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1638747210089</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Feat: :bulb: Test de Admisión bits america&#10;&#10;* Initial commit.&#10;* Se agregan clases para lograr conexión con la api de spotify y generar el acces token para consumir cada uno de los endpoints necesarios.&#10;* Se agrega ruta `releases` que se redirecciona desde la página de inicio, para asi poder visualizar un catálogo de los ultimos lanzamientos.&#10;* Se agrega paginador para los catálogos de los lanzamientos, cada página tiene un limite de 20 registros.&#10;* Falta interfaz para visualizar información del artista y sus canciones." />
+    <option name="LAST_COMMIT_MESSAGE" value="Feat: :bulb: Test de Admisión bits america&#10;&#10;* Initial commit.&#10;* Se agregan clases para lograr conexión con la api de spotify y generar el acces token para consumir cada uno de los endpoints necesarios.&#10;* Se agrega ruta `releases` que se redirecciona desde la página de inicio, para asi poder visualizar un catálogo de los ultimos lanzamientos.&#10;* Se agrega paginador para los catálogos de los lanzamientos, cada página tiene un limite de 20 registros.&#10;* Falta interfaz para visualizar información del artista y sus canciones." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/src/Spotify/Client/Session.php</url>
-          <line>86</line>
+          <line>76</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/src/Spotify/Client/Request.php</url>
-          <line>107</line>
+          <line>106</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/src/Spotify/Client/Request.php</url>
-          <line>167</line>
+          <line>166</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/src/Spotify/Client/Request.php</url>
-          <line>189</line>
+          <line>188</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>

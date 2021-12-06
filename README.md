@@ -1,4 +1,4 @@
-Symfony Standard Edition
+Spotify Api Bits America
 ========================
 
 **WARNING**: This distribution does not support Symfony 4. See the

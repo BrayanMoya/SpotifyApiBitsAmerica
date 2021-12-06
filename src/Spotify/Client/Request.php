@@ -41,7 +41,6 @@ class Request
         $error = $parsedBody->error ?? null;
 
         if (isset($error->message, $error->status)) {
-            // It's an API call error
             $exception = new ApiException($error->message, $error->status);
 
             if (isset($error->reason)) {

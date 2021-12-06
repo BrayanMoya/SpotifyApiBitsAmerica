@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.84.0">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/album/">
+
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}"/>
+    <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
+
+    <title>{% trans %}Artist{% endtrans %}</title>
+</head>
+<body>
+
+<main>
+    <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <img src="{{ artistImage }}" alt=""/>
+                <h1 class="fw-light">{{ artistName }}</h1>
+                <a href="{{ artistSpotifyPage }}" type="button"
+                   class="btn btn-sm btn-primary">
+                    {% trans %}Go to artist page{% endtrans %}
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div class="album py-5 bg-light">
+        <div class="container">
+            <table class="table table-dark">
+                <thead>
+                <tr>
+                    <th scope="col">{% trans %}Photo{% endtrans %}</th>
+                    <th scope="col">{% trans %}Album{% endtrans %}</th>
+                    <th scope="col">{% trans %}Track{% endtrans %}</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                {% for track in tracks %}
+                    <tr>
+                        <td><img src="{{ track.album.images.2.url }}" alt=""/></td>
+                        <td>{{ track.album.name }}</td>
+                        <td>{{ track.name }}</td>
+                    </tr>
+                {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</main>
+
+<footer class="text-muted py-5">
+    <div class="row" style="padding-left: 280px">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="footer_link">
+                <a type="button" class="btn btn-primary btn-sm"
+                   href="{{ urlToReleases }}"><< {% trans %}Releases{% endtrans %}</a>
+                <a class="tq_self_none btn btn-default btn-sm" href="#">{% trans %}Back to top{% endtrans %}</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
