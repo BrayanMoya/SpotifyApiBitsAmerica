@@ -2,7 +2,7 @@
 
 Catálogo de ultimos lanzamientos de albumes de spotify, con información a cada artista relacionado. 
 
-##Clonar
+## Clonar
 ```
 1. Tener git instalado
 2. Ubicarse en un directorio en el cual pondremos el contenido de este repositorio.
@@ -33,9 +33,9 @@ localhost/app.php/es, el parametro 'es' es para internacionalización
 
 
 ## Vista previa
-![alt text](https://github.com/BrayanMoya/SpotifyApiBitsAmerica/tree/master/InicioSpotifyApi.png)
+![InicioSpotifyApi](https://user-images.githubusercontent.com/43082667/144790635-7b6991f4-70b2-4140-a149-9e052b21a712.png)
 
-![alt text](https://github.com/BrayanMoya/SpotifyApiBitsAmerica/tree/master/Lanzamientos.png)
+![Lanzamientos](https://user-images.githubusercontent.com/43082667/144790667-bca3de74-c7c1-46da-95aa-ca05836268d7.png)
 
 ## Configuracion general
 - Iniciar sesión o crear cuenta en https://developer.spotify.com/dashboard/login
