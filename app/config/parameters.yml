@@ -1,0 +1,16 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_host: 127.0.0.1
+    database_port: null
+    database_name: spotifyApi
+    database_user: root
+    database_password: betamaster1
+    mailer_transport: smtp
+    mailer_host: 127.0.0.1
+    mailer_user: null
+    mailer_password: null
+    secret: betamaster1
+
+    spotify:
+      clientId: '280f72443a9b44e6b48b14080fca47cd' # add your client id supplied by your application created in the spotify website for developers
+      clientSecret: 'b554f7be3c5f49b696616aafc664a7b5' # add your client secret supplied by your application created in the spotify website for developers

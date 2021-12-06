@@ -1,0 +1,21 @@
+#app:
+#    resource: '@AppBundle/Controller/'
+#    type: annotation
+
+app:
+    path:     /{_locale}
+    defaults: { _controller: AppBundle:Default:index }
+    requirements:
+        _locale:  en|es
+
+last_releases:
+    path:     /releases/{_locale}
+    defaults: { _controller: AppBundle:Spotify:releases }
+    requirements:
+        _locale:  en|es
+artist:
+    path:     /artist/{_locale}
+    defaults: { _controller: AppBundle:Spotify:artist }
+    requirements:
+        _locale:  en|es
+
